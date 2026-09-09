@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="葛晓娟的 AIGC 广告视频工作流" />
+    <title>广告视频工作流 · 葛晓娟</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="ad-workflow.css" />
+  </head>
+  <body class="workflow-page">
+    <a class="skip-link" href="#main">跳至主要内容</a>
+    <header class="site-header workflow-header">
+      <a class="brand" href="index.html#top" aria-label="返回作品集首页">GX<span>.</span></a>
+      <nav aria-label="主导航">
+        <a href="index.html#work">作品</a>
+        <a aria-current="page" href="#workflow">广告工作流</a>
+        <a href="index.html#about">经历</a>
+        <a href="index.html#contact">联系</a>
+      </nav>
+      <a class="header-cta" href="index.html#work">返回作品集 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section class="workflow-hero" aria-labelledby="workflow-title">
+        <div class="workflow-hero-copy">
+          <p class="workflow-kicker">AIGC AD WORKFLOW / 2026</p>
+          <h1 id="workflow-title">从商品图，<br />到<strong>可投放的 15 秒。</strong></h1>
+          <p>围绕清洁工具、茶饮、美妆护肤、男士香氛与日用产品，已经形成从卖点提炼、分镜、Prompt 到成片质检的固定工作流。每个环节都服务于产品识别与卖点表达，而不只是生成一段好看的画面。</p>
+          <a class="workflow-jump" href="#workflow">查看工作流 <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="workflow-reel" aria-label="广告项目画面选集">
+          <figure><img src="assets/posters/serum.png" alt="精华液广告画面" /><figcaption>质地与肤感</figcaption></figure>
+          <figure><img src="assets/posters/fragrance.png" alt="香水广告画面" /><figcaption>光线与情绪</figcaption></figure>
+          <figure><img src="assets/posters/drink.png" alt="饮料广告画面" /><figcaption>清爽与动势</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="workflow-overview" id="workflow" aria-labelledby="workflow-overview-title">
+        <div class="workflow-heading">
+          <p class="workflow-kicker">THE SYSTEM</p>
+          <h2 id="workflow-overview-title">一条广告，从 Brief 到成片都有明确的下一步。</h2>
+        </div>
+        <ol class="workflow-steps">
+          <li><span>01</span><h3>定位卖点</h3><p>读取商品图、核心卖点与目标用户，确定一条片子只需要观众记住什么。</p><small>输出：卖点优先级 / 开场钩子</small></li>
+          <li><span>02</span><h3>设计表达</h3><p>按品类选择场景、视觉风格和节奏。功能型产品强调使用动作，感性产品突出材质、光线与氛围。</p><small>输出：视觉方向 / 15 秒分镜</small></li>
+          <li><span>03</span><h3>生成与筛选</h3><p>将分镜转为时间轴 Prompt，锁定产品外形、主动作和镜头重点；筛选可剪辑素材并记录失败原因。</p><small>输出：Prompt / 素材池 / 生成约束</small></li>
+          <li><span>04</span><h3>成片与复盘</h3><p>在剪辑中完成卖点强化、文字与声音控制，并用产品不变形、信息可读、节奏有效三个标准复盘。</p><small>输出：成片 / 优化清单 / 模板迭代</small></li>
+        </ol>
+      </section>
+
+      <section class="category-system" aria-labelledby="category-title">
+        <div class="workflow-heading"><p class="workflow-kicker">CATEGORY LOGIC</p><h2 id="category-title">品类可以不同，方法保持一致。</h2></div>
+        <div class="category-grid">
+          <article><p>BEAUTY</p><h3>美妆护肤</h3><span>产品近景、质地流动、肤感联想</span></article>
+          <article><p>FRAGRANCE</p><h3>香氛</h3><span>瓶身轮廓、材质反光、人物情绪</span></article>
+          <article><p>FOOD &amp; DRINK</p><h3>饮品</h3><span>冰感、流动、饮用动作与即时感</span></article>
+          <article><p>DAILY GOODS</p><h3>日用产品</h3><span>功能动作、使用场景与物件细节</span></article>
+        </div>
+      </section>
+
+      <section class="skill-system" aria-labelledby="skill-title">
+        <div class="skill-intro"><p class="workflow-kicker">REUSABLE SKILLS</p><h2 id="skill-title">把经验写成可调用的 Skill，而不是每次从零开始。</h2><p>广告视频工作流已经被整理成可复用的指令结构。每次输入商品图、卖点、受众与限制，就能快速获得对应品类的创意钩子、分镜、Prompt 与质检重点。</p></div>
+        <div class="skill-card">
+          <div class="skill-card-top"><span>SKILL / 01</span><strong>广告视频工作流</strong></div>
+          <div class="skill-flow"><p>输入</p><span>商品图 · 卖点 · 受众 · 时长</span><i aria-hidden="true">↓</i><p>输出</p><span>创意钩子 · 分镜 · 时间轴 Prompt · 质检清单</span></div>
+          <ul><li>产品外观、材质和使用方式的生成约束</li><li>按美妆、香氛、饮品与日用产品切换视觉策略</li><li>有效提示词与失败案例回写到模板，持续优化</li></ul>
+        </div>
+        <div class="skill-card skill-card-secondary"><div class="skill-card-top"><span>SKILL / 02</span><strong>Seedance 视频 Prompt</strong></div><p>将广告分镜进一步转为可执行的视频指令，明确主体、动作、景别、光线、节奏和画面约束，减少生成中常见的产品变形、场景偏移与卖点失焦。</p></div>
+      </section>
+
+      <section class="workflow-check" aria-labelledby="check-title">
+        <div><p class="workflow-kicker">QUALITY GATE</p><h2 id="check-title">成片前，先过三道检查。</h2></div>
+        <ol><li><span>产品</span><p>外观、材质、比例和使用方式是否稳定。</p></li><li><span>卖点</span><p>开场钩子、核心信息和产品露出是否清楚。</p></li><li><span>交付</span><p>节奏、字幕、声音与不同平台比例是否可用。</p></li></ol>
+      </section>
+
+      <section class="workflow-cta" aria-labelledby="workflow-cta-title"><p class="workflow-kicker">SELECTED AD WORK</p><h2 id="workflow-cta-title">流程要被看见，也要被作品验证。</h2><a class="button button-light" href="index.html#ad-work">查看广告成片 <span aria-hidden="true">↗</span></a></section>
+    </main>
+
+    <footer><a class="brand" href="#main" aria-label="返回页面顶部">GX<span>.</span></a><p>© 2026 葛晓娟 · 未经授权不得转载或商用</p><a href="index.html#top">回到作品集 <span aria-hidden="true">↗</span></a></footer>
+  </body>
+</html>
