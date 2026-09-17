@@ -190,6 +190,38 @@ footer p{order:3}
 *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
 
+/* A single editorial reel connects the process to each body of work. */
+.process{padding-bottom:clamp(68px,8vw,108px)}
+.work{background:var(--ink);color:#fff;padding:0 clamp(22px,8vw,130px)}
+.work>.section-heading{display:none}
+.carousel-group,.manga-gallery-section{background:var(--ink);color:#fff;margin:0 calc(-1 * clamp(22px,8vw,130px));padding:0 0 clamp(64px,7vw,98px)}
+.carousel-group::before,.manga-gallery-section::before{display:none}
+.carousel-group+.carousel-group,.manga-gallery-section+.carousel-group,.drama-group{border-top:1px solid rgba(255,255,255,.22);margin-top:0}
+.carousel-group .work-group-heading,.manga-gallery-section .work-group-heading{align-items:center;border:0;display:flex;flex-direction:row;justify-content:flex-start;margin:0;max-width:none;min-height:118px;padding:23px clamp(22px,8vw,130px);text-align:left}
+.carousel-group .work-group-heading>p,.manga-gallery-section .work-group-heading>p{display:none}
+.carousel-group .work-group-heading .section-kicker,.manga-gallery-section .work-group-heading .section-kicker{color:var(--pink);letter-spacing:.16em;margin:0 0 7px}
+.carousel-group .work-group-heading h3,.manga-gallery-section .work-group-heading h3{font:700 clamp(34px,4vw,56px)/1 var(--font-display);letter-spacing:-.05em}
+.carousel-track{gap:clamp(18px,2vw,30px);padding:0 max(8vw,calc((100% - min(62vw,840px))/2));scroll-padding-inline:max(8vw,calc((100% - min(62vw,840px))/2))}
+.carousel-track .project-card{flex-basis:min(62vw,840px)}
+.carousel-track .project-open{height:100%}
+.carousel-track .project-visual,.carousel-track .project-visual.portrait{aspect-ratio:16/9!important;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 42px rgba(0,0,0,.42);margin:0}
+.carousel-track .project-visual::after{background:rgba(4,4,4,.3);content:"";inset:0;pointer-events:none;position:absolute}
+.carousel-track .project-visual img{filter:saturate(.92);transition:filter .3s ease,transform .45s cubic-bezier(.2,.65,.2,1)}
+.carousel-track .project-open:hover .project-visual img{filter:saturate(1.08);transform:scale(1.025)}
+.project-cover-copy{align-items:flex-start;background:rgba(8,8,8,.83);border-top:1px solid rgba(255,255,255,.22);bottom:0;box-sizing:border-box;display:flex;flex-direction:column;gap:7px;left:0;max-width:min(78%,620px);min-height:43%;padding:clamp(15px,2vw,27px);position:absolute;z-index:2}
+.project-cover-type{color:var(--pink);font:700 10px/1.2 var(--font-body);letter-spacing:.11em;text-transform:uppercase}
+.project-cover-copy strong{font:700 clamp(21px,2.45vw,37px)/1.06 var(--font-display);letter-spacing:-.045em}
+.project-cover-line{color:rgba(255,255,255,.76);font-size:clamp(12px,1.15vw,15px);line-height:1.5;max-width:42ch}
+.carousel-track .play-badge{background:rgba(5,5,5,.78);bottom:auto;height:50px;left:auto;right:16px;top:16px;transform:none;width:50px;z-index:3}
+.carousel-track .play-badge::after{border-bottom-width:8px;border-left-width:12px;border-top-width:8px}
+.carousel-track .project-meta,.carousel-track .project-card h3,.carousel-track .project-summary,.carousel-track .project-review-open,.carousel-track .project-workflow-link{display:none}
+.carousel-control{top:calc(118px + min(20vw,236px))}
+.dialog-actions{align-items:center;border-top:1px solid var(--line);display:flex;gap:18px;margin-top:28px;padding-top:16px}
+.dialog-review-open,.dialog-workflow-link{background:transparent;border:0;border-bottom:1px solid var(--ink);color:var(--ink);cursor:pointer;font:700 12px var(--font-body);min-height:34px;padding:0 0 3px}
+.dialog-workflow-link{display:inline-flex;align-items:center}
+.dialog-review-open[hidden],.dialog-workflow-link[hidden]{display:none}
+@media (max-width:760px){.process{padding-bottom:66px}.work{padding:0 18px}.carousel-group,.manga-gallery-section{margin:0 -18px;padding-bottom:62px}.carousel-group .work-group-heading,.manga-gallery-section .work-group-heading{display:flex;margin:0;min-height:92px;padding:18px}.carousel-group .work-group-heading h3,.manga-gallery-section .work-group-heading h3{font-size:34px}.carousel-track{gap:14px;padding-inline:9vw;scroll-padding-inline:9vw}.carousel-track .project-card{flex-basis:82vw}.project-cover-copy{gap:5px;max-width:88%;min-height:48%;padding:15px}.project-cover-copy strong{font-size:22px}.project-cover-line{font-size:12px}.carousel-track .play-badge{height:44px;right:12px;top:12px;width:44px}.carousel-control{top:calc(92px + 23vw)}.dialog-actions{align-items:flex-start;flex-direction:column;gap:8px}}
+
 
 /* Real project artwork and local playback. */
 .project-visual img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.65,.2,1),filter .3s ease}
@@ -272,3 +304,31 @@ footer p{order:3}
 .carousel-control[data-carousel-direction="1"]{right:clamp(10px,2vw,32px)}
 .carousel-control:hover{background:#fff;color:var(--ink)}
 @media (max-width:760px){.work>.section-heading{min-height:0;padding:42px 0 38px}.work>.section-heading h2{font-size:42px}.work-group-heading{align-items:start;display:block;margin-bottom:24px}.work-group-heading>p{margin-top:16px}.manga-gallery-section{padding:0 18px 70px}.manga-gallery-section .work-group-heading,.carousel-group .work-group-heading{display:block;margin-bottom:30px;text-align:left}.manga-gallery-section .work-group-heading>p,.carousel-group .work-group-heading>p{margin-top:14px}.manga-gallery-section .project-grid{gap:16px;justify-content:flex-start;overflow-x:auto;padding:4px 9vw 36px;scroll-snap-type:x mandatory;scrollbar-width:none}.manga-gallery-section .project-grid::-webkit-scrollbar{display:none}.manga-gallery-section .project-card{flex:0 0 min(68vw,270px);scroll-snap-align:center}.manga-gallery-section .project-card:first-child{transform:rotate(-4deg)}.manga-gallery-section .project-card:last-child{transform:rotate(4deg)}.manga-gallery-section .project-card:hover{transform:none}.manga-gallery-section .project-card h3{font-size:21px}.carousel-group{margin-top:70px;padding:68px 0}.carousel-group .work-group-heading{padding:0 18px}.carousel-track{gap:16px;padding-inline:12vw;scroll-padding-inline:12vw}.carousel-track .project-card{flex-basis:76vw}.carousel-track .project-card h3{font-size:17px}.carousel-track .play-badge{height:56px;width:56px}.carousel-track .play-badge::after{border-bottom-width:8px;border-left-width:12px;border-top-width:8px}.carousel-control{height:44px;top:calc(12vw + 21.375vw);width:44px}.carousel-control[data-carousel-direction="-1"]{left:6px}.carousel-control[data-carousel-direction="1"]{right:6px}}
+
+/* Final work reel overrides. Kept last so the gallery rules remain the source of truth. */
+.process{padding-bottom:clamp(68px,8vw,108px)}
+.work{background:var(--ink);color:#fff;padding:0 clamp(22px,8vw,130px)}
+.work>.section-heading{display:none}
+.carousel-group{background:var(--ink);color:#fff;margin:0 calc(-1 * clamp(22px,8vw,130px));padding:0 0 clamp(64px,7vw,98px)}
+.carousel-group::before{display:none}
+.drama-group,.carousel-group+.carousel-group{border-top:1px solid rgba(255,255,255,.22);margin-top:0}
+.carousel-group .work-group-heading{align-items:center;display:flex;flex-direction:row;justify-content:flex-start;margin:0;max-width:none;min-height:118px;padding:23px clamp(22px,8vw,130px);text-align:left}
+.carousel-group .work-group-heading>p{display:none}
+.carousel-group .work-group-heading .section-kicker{color:var(--pink);letter-spacing:.16em;margin:0 0 7px}
+.carousel-group .work-group-heading h3{font:700 clamp(34px,4vw,56px)/1 var(--font-display);letter-spacing:-.05em}
+.carousel-track{gap:clamp(18px,2vw,30px);padding:0 max(8vw,calc((100% - min(62vw,840px))/2));scroll-padding-inline:max(8vw,calc((100% - min(62vw,840px))/2))}
+.carousel-track .project-card{flex-basis:min(62vw,840px)}
+.carousel-track .project-open{height:100%}
+.carousel-track .project-visual,.carousel-track .project-visual.portrait{aspect-ratio:16/9!important;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 42px rgba(0,0,0,.42);margin:0}
+.carousel-track .project-visual::after{background:rgba(4,4,4,.3);content:"";inset:0;pointer-events:none;position:absolute}
+.carousel-track .project-open:hover .project-visual img{filter:saturate(1.08);transform:scale(1.025)}
+.project-cover-copy{align-items:flex-start;background:rgba(8,8,8,.83);border-top:1px solid rgba(255,255,255,.22);bottom:0;box-sizing:border-box;display:flex;flex-direction:column;gap:7px;left:0;max-width:min(78%,620px);min-height:43%;padding:clamp(15px,2vw,27px);position:absolute;z-index:2}
+.project-cover-type{color:var(--pink);font:700 10px/1.2 var(--font-body);letter-spacing:.11em;text-transform:uppercase}
+.project-cover-copy strong{font:700 clamp(21px,2.45vw,37px)/1.06 var(--font-display);letter-spacing:-.045em}
+.project-cover-line{color:rgba(255,255,255,.76);font-size:clamp(12px,1.15vw,15px);line-height:1.5;max-width:42ch}
+.carousel-track .play-badge{background:rgba(5,5,5,.78);bottom:auto;height:50px;left:auto;right:16px;top:16px;transform:none;width:50px;z-index:3}
+.carousel-track .play-badge::after{border-bottom-width:8px;border-left-width:12px;border-top-width:8px}
+.carousel-track .project-meta,.carousel-track .project-card h3,.carousel-track .project-summary,.carousel-track .project-review-open,.carousel-track .project-workflow-link{display:none}
+.carousel-control{top:calc(118px + min(20vw,236px))}
+.dialog-review-open[hidden],.dialog-workflow-link[hidden]{display:none}
+@media (max-width:760px){.process{padding-bottom:66px}.work{padding:0 18px}.carousel-group{margin:0 -18px;padding-bottom:62px}.carousel-group .work-group-heading{display:flex;margin:0;min-height:92px;padding:18px}.carousel-group .work-group-heading h3{font-size:34px}.carousel-track{gap:14px;padding-inline:9vw;scroll-padding-inline:9vw}.carousel-track .project-card{flex-basis:82vw}.project-cover-copy{gap:5px;max-width:88%;min-height:48%;padding:15px}.project-cover-copy strong{font-size:22px}.project-cover-line{font-size:12px}.carousel-track .play-badge{height:44px;right:12px;top:12px;width:44px}.carousel-control{top:calc(92px + 23vw)}}
