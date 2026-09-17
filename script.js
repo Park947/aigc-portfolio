@@ -59,7 +59,7 @@ const projects = {
     intro: "以城市后巷与警戒线为视觉入口，在冷灰色调和环境留白中，建立一段事件发生后的悬疑感。",
     role: "画面设计、AI 视频生成、素材筛选与节奏剪辑。",
     focus: "用警戒线、封闭空间和克制的镜头运动集中观众注意力，让有限时长内的环境信息先于答案出现。",
-    video: "assets/videos/cordon-after.mp4"
+    video: "assets/videos/cordon-after.mov"
   },
   serum: {
     type: "美妆广告 / 00:15",
