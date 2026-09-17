@@ -192,8 +192,11 @@ footer p{order:3}
 
 /* A single editorial reel connects the process to each body of work. */
 .process{padding-bottom:clamp(68px,8vw,108px)}
-.work{background:var(--ink);color:#fff;padding:0 clamp(22px,8vw,130px)}
-.work>.section-heading{display:none}
+.work{background:var(--paper);color:var(--ink);padding:0 clamp(22px,8vw,130px)}
+.work>.section-heading{align-items:center;display:flex;justify-content:space-between;margin:0;min-height:clamp(164px,15vw,218px);padding:clamp(34px,4vw,54px) 0}
+.work>.section-heading h2{font-size:clamp(42px,4.5vw,68px)}
+.work>.section-heading>p{color:var(--muted);margin:0;max-width:370px}
+.work>.section-heading .section-kicker{color:var(--ink)}
 .carousel-group,.manga-gallery-section{background:var(--ink);color:#fff;margin:0 calc(-1 * clamp(22px,8vw,130px));padding:0 0 clamp(64px,7vw,98px)}
 .carousel-group::before,.manga-gallery-section::before{display:none}
 .carousel-group+.carousel-group,.manga-gallery-section+.carousel-group,.drama-group{border-top:1px solid rgba(255,255,255,.22);margin-top:0}
@@ -307,8 +310,11 @@ footer p{order:3}
 
 /* Final work reel overrides. Kept last so the gallery rules remain the source of truth. */
 .process{padding-bottom:clamp(68px,8vw,108px)}
-.work{background:var(--ink);color:#fff;padding:0 clamp(22px,8vw,130px)}
-.work>.section-heading{display:none}
+.work{background:var(--paper);color:var(--ink);padding:0 clamp(22px,8vw,130px)}
+.work>.section-heading{align-items:center;display:flex;justify-content:space-between;margin:0;min-height:clamp(164px,15vw,218px);padding:clamp(34px,4vw,54px) 0}
+.work>.section-heading h2{font-size:clamp(42px,4.5vw,68px)}
+.work>.section-heading>p{color:var(--muted);margin:0;max-width:370px}
+.work>.section-heading .section-kicker{color:var(--ink)}
 .carousel-group{background:var(--ink);color:#fff;margin:0 calc(-1 * clamp(22px,8vw,130px));padding:0 0 clamp(64px,7vw,98px)}
 .carousel-group::before{display:none}
 .drama-group,.carousel-group+.carousel-group{border-top:1px solid rgba(255,255,255,.22);margin-top:0}
@@ -331,4 +337,4 @@ footer p{order:3}
 .carousel-track .project-meta,.carousel-track .project-card h3,.carousel-track .project-summary,.carousel-track .project-review-open,.carousel-track .project-workflow-link{display:none}
 .carousel-control{top:calc(118px + min(20vw,236px))}
 .dialog-review-open[hidden],.dialog-workflow-link[hidden]{display:none}
-@media (max-width:760px){.process{padding-bottom:66px}.work{padding:0 18px}.carousel-group{margin:0 -18px;padding-bottom:62px}.carousel-group .work-group-heading{display:flex;margin:0;min-height:92px;padding:18px}.carousel-group .work-group-heading h3{font-size:34px}.carousel-track{gap:14px;padding-inline:9vw;scroll-padding-inline:9vw}.carousel-track .project-card{flex-basis:82vw}.project-cover-copy{gap:5px;max-width:88%;min-height:48%;padding:15px}.project-cover-copy strong{font-size:22px}.project-cover-line{font-size:12px}.carousel-track .play-badge{height:44px;right:12px;top:12px;width:44px}.carousel-control{top:calc(92px + 23vw)}}
+@media (max-width:760px){.process{padding-bottom:66px}.work{padding:0 18px}.work>.section-heading{align-items:flex-start;display:block;min-height:0;padding:42px 0 38px}.work>.section-heading h2{font-size:42px}.work>.section-heading>p{margin-top:18px}.carousel-group{margin:0 -18px;padding-bottom:62px}.carousel-group .work-group-heading{display:flex;margin:0;min-height:92px;padding:18px}.carousel-group .work-group-heading h3{font-size:34px}.carousel-track{gap:14px;padding-inline:9vw;scroll-padding-inline:9vw}.carousel-track .project-card{flex-basis:82vw}.project-cover-copy{gap:5px;max-width:88%;min-height:48%;padding:15px}.project-cover-copy strong{font-size:22px}.project-cover-line{font-size:12px}.carousel-track .play-badge{height:44px;right:12px;top:12px;width:44px}.carousel-control{top:calc(92px + 23vw)}}
