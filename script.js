@@ -111,6 +111,21 @@ const projects = {
   }
 };
 
+const coverLines = {
+  fortune: "财神下凡送财，却被妈妈拉去相亲。",
+  reborn: "重生之后，她决定不再救那个背叛自己的人。",
+  mirror: "镜中的另一个自己，已经先活过今天。",
+  elevator: "每一次开门，都通往一段不同的人生。",
+  eclipse: "女战士深入日蚀丛林，迎战兽群与虫王。",
+  cordon: "警戒线围住的后巷，藏着事件发生后的真相。",
+  serum: "用质地、肤感与近景特写讲清护肤卖点。",
+  fragrance: "以光线、肌肤与瓶身建立香气的想象。",
+  drink: "清爽动态与饮用瞬间，放大即时的畅快感。",
+  glass: "从产品轮廓到使用动作，呈现日用质感。",
+  scoop: "用一个明确动作，把产品功能说清楚。",
+  "amber-fragrance": "粉雾、肌肤与琥珀色瓶身留下气味印象。"
+};
+
 const dialog = document.querySelector(".project-dialog");
 const dialogTitle = document.querySelector("#dialog-title");
 const dialogType = document.querySelector(".dialog-type");
@@ -119,6 +134,8 @@ const dialogRole = document.querySelector(".dialog-role");
 const dialogFocus = document.querySelector(".dialog-focus");
 const dialogVideo = document.querySelector(".dialog-video");
 const episodePicker = document.querySelector(".episode-picker");
+const dialogReviewButton = document.querySelector(".dialog-review-open");
+const dialogWorkflowLink = document.querySelector(".dialog-workflow-link");
 const reviewDialog = document.querySelector(".review-dialog");
 const reviewType = document.querySelector(".review-type");
 const reviewTitle = document.querySelector("#review-title");
@@ -162,6 +179,9 @@ const openProject = (projectId) => {
   dialogIntro.textContent = project.intro;
   dialogRole.textContent = project.role;
   dialogFocus.textContent = project.focus;
+  dialogReviewButton.hidden = !project.review;
+  dialogReviewButton.dataset.project = projectId;
+  dialogWorkflowLink.hidden = !project.type.includes("广告");
   setVideo(project.video);
   renderEpisodes(project.episodes);
   dialog.showModal();
@@ -194,6 +214,12 @@ document.querySelectorAll(".project-card").forEach((card) => {
 
 document.querySelectorAll(".project-review-open").forEach((button) => {
   button.addEventListener("click", () => openReview(button.dataset.project));
+});
+
+dialogReviewButton.addEventListener("click", () => {
+  const projectId = dialogReviewButton.dataset.project;
+  dialog.close();
+  openReview(projectId);
 });
 
 document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
@@ -231,6 +257,25 @@ const projectKinds = {
 document.querySelectorAll(".project-card").forEach((card) => {
   const destination = document.querySelector(`[data-work-kind="${projectKinds[card.dataset.project]}"] .project-grid`);
   destination?.append(card);
+});
+
+document.querySelectorAll(".project-card").forEach((card) => {
+  const project = projects[card.dataset.project];
+  const visual = card.querySelector(".project-visual");
+  if (!project || !visual) return;
+
+  const copy = document.createElement("span");
+  copy.className = "project-cover-copy";
+  const type = document.createElement("span");
+  type.className = "project-cover-type";
+  type.textContent = project.type;
+  const title = document.createElement("strong");
+  title.textContent = project.title;
+  const line = document.createElement("span");
+  line.className = "project-cover-line";
+  line.textContent = coverLines[card.dataset.project] || project.intro;
+  copy.append(type, title, line);
+  visual.append(copy);
 });
 
 document.querySelectorAll(".work-carousel").forEach((carousel) => {
