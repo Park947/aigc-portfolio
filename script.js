@@ -1,6 +1,6 @@
 const projects = {
   fortune: {
-    type: "AIGC 短剧 / 2026.06 - 至今 / 07 集",
+    type: "AI 漫剧 / 2026.06 - 至今 / 07 集",
     title: "财神爷来我家送财，结果被我妈拉去相亲",
     intro: "一个以家庭轻喜剧和职场反差为核心的 7 集竖屏短剧策划。让“财神送财”与“妈妈相亲”两条不相干的线，在第一秒就撞在一起。",
     role: "选题、人物关系、分集结构、角色 / 场景 / 道具资产规划、分镜与 Seedance 分段 Prompt。",
@@ -18,7 +18,7 @@ const projects = {
     ]
   },
   reborn: {
-    type: "AIGC 悬疑短剧 / 03:01",
+    type: "AI 漫剧 / 03:01",
     title: "《重生后，我不再救他》",
     intro: "以重生后的关键抉择为起点，围绕人物关系和悬疑反转推进的一支叙事短剧。",
     role: "剧本、分镜、AI 视频生成、素材筛选、剪辑与声音设计。",
@@ -45,7 +45,7 @@ const projects = {
     video: "assets/videos/elevator-life.mp4"
   },
   eclipse: {
-    type: "视觉实验 / 00:30",
+    type: "视觉短片 / 00:30",
     title: "《日蚀丛林》",
     intro: "一支 30 秒的美漫风动作预告片：女战士深入原始丛林，在日蚀发生时遭遇兽群与虫王。当前为带生成平台标记的展示版，后续将替换为无水印导出。",
     role: "世界观、角色、怪物与场景设定；6 个高动作密度镜头拆解；图生视频生成、素材筛选、剪辑与声音包装。",
@@ -100,6 +100,14 @@ const projects = {
     role: "卖点梳理、镜头设计、视频生成、素材筛选与成片优化。",
     focus: "用连续动作说明产品功能，并在细节特写中保留真实的材质与使用感。",
     video: "assets/videos/scoop.mp4"
+  },
+  "amber-fragrance": {
+    type: "香氛广告 / 00:30",
+    title: "琥珀香氛",
+    intro: "以暖粉雾气、肌肤近景与琥珀色瓶身，建立柔和而有记忆点的香氛氛围。",
+    role: "创意构思、镜头设计、AI 视频生成、素材筛选与剪辑。",
+    focus: "以人物与瓶身的近距离关系承接香气联想，并用暖色光线维持画面的统一质感。",
+    video: "assets/videos/amber-fragrance.mp4"
   }
 };
 
@@ -205,20 +213,37 @@ reviewDialog.addEventListener("click", (event) => {
   if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) reviewDialog.close();
 });
 
-document.querySelectorAll(".filter").forEach((filter) => {
-  filter.addEventListener("click", () => {
-    document.querySelectorAll(".filter").forEach((button) => {
-      button.classList.remove("is-active");
-      button.setAttribute("aria-pressed", "false");
-    });
-    filter.classList.add("is-active");
-    filter.setAttribute("aria-pressed", "true");
-    document.querySelectorAll(".project-card").forEach((card) => {
-      card.classList.toggle("is-hidden", filter.dataset.filter !== "all" && card.dataset.category !== filter.dataset.filter);
-    });
-    document.querySelectorAll(".work-group").forEach((group) => {
-      group.classList.toggle("is-empty", !group.querySelector(".project-card:not(.is-hidden)"));
-    });
+const projectKinds = {
+  fortune: "drama",
+  reborn: "drama",
+  mirror: "film",
+  elevator: "film",
+  eclipse: "film",
+  cordon: "film",
+  serum: "ad",
+  fragrance: "ad",
+  drink: "ad",
+  glass: "ad",
+  scoop: "ad",
+  "amber-fragrance": "ad"
+};
+
+document.querySelectorAll(".project-card").forEach((card) => {
+  const destination = document.querySelector(`[data-work-kind="${projectKinds[card.dataset.project]}"] .project-grid`);
+  destination?.append(card);
+});
+
+document.querySelectorAll(".work-carousel").forEach((carousel) => {
+  const track = carousel.querySelector(".carousel-track");
+  const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * 0.82, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  carousel.querySelectorAll(".carousel-control").forEach((button) => {
+    button.addEventListener("click", () => move(Number(button.dataset.carouselDirection)));
+  });
+  track.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      move(event.key === "ArrowLeft" ? -1 : 1);
+    }
   });
 });
 
