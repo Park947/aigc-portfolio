@@ -235,7 +235,12 @@ document.querySelectorAll(".project-card").forEach((card) => {
 
 document.querySelectorAll(".work-carousel").forEach((carousel) => {
   const track = carousel.querySelector(".carousel-track");
-  const move = (direction) => track.scrollBy({ left: direction * track.clientWidth * 0.82, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  const move = (direction) => {
+    const firstCard = track.querySelector(".project-card");
+    const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
+    const distance = firstCard ? firstCard.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+    track.scrollBy({ left: direction * distance, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  };
   carousel.querySelectorAll(".carousel-control").forEach((button) => {
     button.addEventListener("click", () => move(Number(button.dataset.carouselDirection)));
   });
