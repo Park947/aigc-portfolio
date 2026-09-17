@@ -68,14 +68,12 @@
         </ol>
       </section>
 
-      <section class="work section-pad" id="work" aria-labelledby="work-title">
-        <div class="section-heading">
-          <div><p class="section-kicker">SELECTED WORK</p><h2 id="work-title">作品，不止是画面。</h2></div>
-          <p>十二个项目覆盖 AI 漫剧、叙事短片与品牌广告。选择一支作品，观看成片与创作过程。</p>
-        </div>
-        <div class="work-group manga-gallery-section drama-group" data-work-kind="drama">
-          <div class="work-group-heading"><div><p class="section-kicker">SELECTED DRAMA</p><h3>AI 漫剧</h3></div><p>从人物关系、分集结构到镜头连续性，探索可持续展开的叙事。</p></div>
-          <div class="project-grid project-grid-portrait">
+      <section class="work section-pad" id="work" aria-label="作品">
+        <div class="work-group carousel-group drama-group" data-work-kind="drama">
+          <div class="work-group-heading"><div><p class="section-kicker">AIGC DRAMA</p><h3>AI 漫剧</h3></div><p>从人物关系、分集结构到镜头连续性，探索可持续展开的叙事。</p></div>
+          <div class="work-carousel">
+            <button class="carousel-control" type="button" data-carousel-direction="-1" aria-label="查看上一部 AI 漫剧">←</button>
+          <div class="project-grid project-grid-landscape carousel-track" tabindex="0" aria-label="AI 漫剧横向滑动列表">
           <article class="project-card reveal" data-category="drama" data-project="fortune">
             <button class="project-open" type="button" aria-label="查看财神爷来我家送财项目详情">
               <div class="project-visual portrait"><img src="assets/posters/fortune-series.png" alt="财神爷来我家送财，结果被我妈拉去相亲海报" loading="eager" /><span class="play-badge" aria-hidden="true">播放 07 集</span></div>
@@ -105,6 +103,8 @@
             </button>
             <button class="project-review-open" type="button" data-project="elevator" aria-label="查看电梯里的每一层人生的制作思路与问题复盘">查看制作思路与问题复盘 <i aria-hidden="true">↗</i></button>
           </article>
+          </div>
+            <button class="carousel-control" type="button" data-carousel-direction="1" aria-label="查看下一部 AI 漫剧">→</button>
           </div>
         </div>
 
@@ -241,7 +241,7 @@
     <dialog class="project-dialog" aria-labelledby="dialog-title">
       <button class="dialog-close" type="button" aria-label="关闭项目详情">×</button>
       <div class="dialog-media"><video class="dialog-video" controls controlsList="nodownload noremoteplayback" disablePictureInPicture disableRemotePlayback playsinline preload="metadata"></video></div>
-      <div class="dialog-content"><p class="dialog-type"></p><h2 id="dialog-title"></h2><p class="dialog-intro"></p><div class="episode-picker" aria-label="选择短剧集数" hidden></div><div class="dialog-grid"><div><h3>参与环节</h3><p class="dialog-role"></p></div><div><h3>创作尝试</h3><p class="dialog-focus"></p></div></div></div>
+      <div class="dialog-content"><p class="dialog-type"></p><h2 id="dialog-title"></h2><p class="dialog-intro"></p><div class="episode-picker" aria-label="选择短剧集数" hidden></div><div class="dialog-grid"><div><h3>参与环节</h3><p class="dialog-role"></p></div><div><h3>创作尝试</h3><p class="dialog-focus"></p></div></div><div class="dialog-actions"><button class="dialog-review-open" type="button" hidden>查看制作复盘 <span aria-hidden="true">↗</span></button><a class="dialog-workflow-link" href="ad-workflow.html" hidden>查看广告工作流 <span aria-hidden="true">↗</span></a></div></div>
     </dialog>
     <dialog class="review-dialog" aria-labelledby="review-title">
       <button class="review-close" type="button" aria-label="关闭制作复盘">×</button>
