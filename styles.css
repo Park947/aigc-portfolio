@@ -49,11 +49,7 @@ nav a,.header-cta,footer a{transition:color .2s ease}
 .statement h2,.section-heading h2,.about h2,.contact h2{font:700 clamp(34px,5vw,76px)/.98 var(--font-display);letter-spacing:-.075em;margin:0}
 .statement h2 strong{color:var(--pink);font-weight:inherit}
 .statement>p{max-width:430px;align-self:end;margin:0;font-size:18px;line-height:1.6}
-.work{background:var(--paper);color:var(--ink);padding-bottom:0;padding-top:0}
-.work>.section-heading{align-items:center;min-height:clamp(180px,18vw,250px);margin:0;padding:clamp(36px,4vw,56px) 0}
-.work>.section-heading h2{font-size:clamp(42px,4.5vw,68px)}
-.work>.section-heading>p{color:var(--muted)}
-.work>.section-heading .section-kicker{color:var(--ink)}
+.work{background:var(--paper)}
 .section-heading{display:flex;justify-content:space-between;gap:48px;align-items:end;margin-bottom:50px}
 .section-heading>p{max-width:370px;color:var(--muted);font-size:15px;margin:0}
 .work-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
@@ -190,41 +186,6 @@ footer p{order:3}
 *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
 
-/* A single editorial reel connects the process to each body of work. */
-.process{padding-bottom:clamp(68px,8vw,108px)}
-.work{background:var(--paper);color:var(--ink);padding:0 clamp(22px,8vw,130px)}
-.work>.section-heading{align-items:center;display:flex;justify-content:space-between;margin:0;min-height:clamp(164px,15vw,218px);padding:clamp(34px,4vw,54px) 0}
-.work>.section-heading h2{font-size:clamp(42px,4.5vw,68px)}
-.work>.section-heading>p{color:var(--muted);margin:0;max-width:370px}
-.work>.section-heading .section-kicker{color:var(--ink)}
-.carousel-group,.manga-gallery-section{background:var(--ink);color:#fff;margin:0 calc(-1 * clamp(22px,8vw,130px));padding:0 0 clamp(64px,7vw,98px)}
-.carousel-group::before,.manga-gallery-section::before{display:none}
-.carousel-group+.carousel-group,.manga-gallery-section+.carousel-group,.drama-group{border-top:1px solid rgba(255,255,255,.22);margin-top:0}
-.carousel-group .work-group-heading,.manga-gallery-section .work-group-heading{align-items:center;border:0;display:flex;flex-direction:row;justify-content:flex-start;margin:0;max-width:none;min-height:118px;padding:23px clamp(22px,8vw,130px);text-align:left}
-.carousel-group .work-group-heading>p,.manga-gallery-section .work-group-heading>p{display:none}
-.carousel-group .work-group-heading .section-kicker,.manga-gallery-section .work-group-heading .section-kicker{color:var(--pink);letter-spacing:.16em;margin:0 0 7px}
-.carousel-group .work-group-heading h3,.manga-gallery-section .work-group-heading h3{font:700 clamp(34px,4vw,56px)/1 var(--font-display);letter-spacing:-.05em}
-.carousel-track{gap:clamp(18px,2vw,30px);padding:0 max(8vw,calc((100% - min(62vw,840px))/2));scroll-padding-inline:max(8vw,calc((100% - min(62vw,840px))/2))}
-.carousel-track .project-card{flex-basis:min(62vw,840px)}
-.carousel-track .project-open{height:100%}
-.carousel-track .project-visual,.carousel-track .project-visual.portrait{aspect-ratio:16/9!important;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 42px rgba(0,0,0,.42);margin:0}
-.carousel-track .project-visual::after{background:rgba(4,4,4,.3);content:"";inset:0;pointer-events:none;position:absolute}
-.carousel-track .project-visual img{filter:saturate(.92);transition:filter .3s ease,transform .45s cubic-bezier(.2,.65,.2,1)}
-.carousel-track .project-open:hover .project-visual img{filter:saturate(1.08);transform:scale(1.025)}
-.project-cover-copy{align-items:flex-start;background:rgba(8,8,8,.83);border-top:1px solid rgba(255,255,255,.22);bottom:0;box-sizing:border-box;display:flex;flex-direction:column;gap:7px;left:0;max-width:min(78%,620px);min-height:43%;padding:clamp(15px,2vw,27px);position:absolute;z-index:2}
-.project-cover-type{color:var(--pink);font:700 10px/1.2 var(--font-body);letter-spacing:.11em;text-transform:uppercase}
-.project-cover-copy strong{font:700 clamp(21px,2.45vw,37px)/1.06 var(--font-display);letter-spacing:-.045em}
-.project-cover-line{color:rgba(255,255,255,.76);font-size:clamp(12px,1.15vw,15px);line-height:1.5;max-width:42ch}
-.carousel-track .play-badge{background:rgba(5,5,5,.78);bottom:auto;height:50px;left:auto;right:16px;top:16px;transform:none;width:50px;z-index:3}
-.carousel-track .play-badge::after{border-bottom-width:8px;border-left-width:12px;border-top-width:8px}
-.carousel-track .project-meta,.carousel-track .project-card h3,.carousel-track .project-summary,.carousel-track .project-review-open,.carousel-track .project-workflow-link{display:none}
-.carousel-control{top:calc(118px + min(20vw,236px))}
-.dialog-actions{align-items:center;border-top:1px solid var(--line);display:flex;gap:18px;margin-top:28px;padding-top:16px}
-.dialog-review-open,.dialog-workflow-link{background:transparent;border:0;border-bottom:1px solid var(--ink);color:var(--ink);cursor:pointer;font:700 12px var(--font-body);min-height:34px;padding:0 0 3px}
-.dialog-workflow-link{display:inline-flex;align-items:center}
-.dialog-review-open[hidden],.dialog-workflow-link[hidden]{display:none}
-@media (max-width:760px){.process{padding-bottom:66px}.work{padding:0 18px}.carousel-group,.manga-gallery-section{margin:0 -18px;padding-bottom:62px}.carousel-group .work-group-heading,.manga-gallery-section .work-group-heading{display:flex;margin:0;min-height:92px;padding:18px}.carousel-group .work-group-heading h3,.manga-gallery-section .work-group-heading h3{font-size:34px}.carousel-track{gap:14px;padding-inline:9vw;scroll-padding-inline:9vw}.carousel-track .project-card{flex-basis:82vw}.project-cover-copy{gap:5px;max-width:88%;min-height:48%;padding:15px}.project-cover-copy strong{font-size:22px}.project-cover-line{font-size:12px}.carousel-track .play-badge{height:44px;right:12px;top:12px;width:44px}.carousel-control{top:calc(92px + 23vw)}.dialog-actions{align-items:flex-start;flex-direction:column;gap:8px}}
-
 
 /* Real project artwork and local playback. */
 .project-visual img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s cubic-bezier(.2,.65,.2,1),filter .3s ease}
@@ -249,92 +210,3 @@ footer p{order:3}
 .project-grid-portrait .project-card h3{min-height:2.1em}
 .project-grid-landscape .project-visual:not(.portrait){aspect-ratio:16/9}
 @media (max-width:760px){.project-grid-portrait{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.project-grid-landscape{grid-template-columns:1fr}.project-grid-portrait .project-card h3{font-size:21px;min-height:3.15em}.project-grid-portrait .project-meta{align-items:flex-start;flex-direction:column;gap:6px}.project-grid-portrait .view-project{display:none}}
-
-/* The work section takes its visual cue from a gallery of covers followed by cinematic reels. */
-.work-group-heading{align-items:end;display:flex;gap:42px;justify-content:space-between;margin-bottom:30px}
-.work-group-heading .section-kicker{margin-bottom:12px}
-.work-group-heading h3{font:700 clamp(34px,5vw,68px)/.98 var(--font-display);letter-spacing:-.06em;margin:0}
-.work-group-heading>p{font-size:15px;line-height:1.6;margin:0;max-width:390px}
-
-/* Selected drama work: a compact, layered cover gallery. */
-.manga-gallery-section{background:#080909;color:#fff;margin:0 calc(-1 * clamp(22px,8vw,130px));overflow:hidden;padding:0 clamp(22px,8vw,130px) clamp(78px,9vw,118px);position:relative}
-.manga-gallery-section::before{background:repeating-linear-gradient(90deg,rgba(255,255,255,.024) 0 1px,transparent 1px 6px);content:"";inset:0;opacity:.35;pointer-events:none;position:absolute}
-.manga-gallery-section>*{position:relative}
-.manga-gallery-section .work-group-heading{align-items:center;flex-direction:column;margin:0 auto 46px;max-width:640px;text-align:center}
-.manga-gallery-section .work-group-heading>p{color:rgba(255,255,255,.54);font-size:14px;max-width:470px}
-.manga-gallery-section .section-kicker{color:rgba(255,255,255,.44);letter-spacing:.24em}
-.manga-gallery-section .project-grid{align-items:flex-end;display:flex;gap:clamp(32px,6vw,100px);justify-content:center;margin:0 auto;max-width:960px;perspective:1200px}
-.manga-gallery-section .project-card{border:0;color:#fff;flex:0 1 clamp(210px,22vw,285px);padding:0;transform-origin:center bottom;transition:transform .35s cubic-bezier(.2,.65,.2,1)}
-.manga-gallery-section .project-card:first-child{transform:rotate(-7deg) translateY(12px)}
-.manga-gallery-section .project-card:last-child{transform:rotate(6deg) translateY(-8px)}
-.manga-gallery-section .project-card:hover{transform:translateY(-20px) rotate(0)}
-.manga-gallery-section .project-visual,.manga-gallery-section .project-visual.portrait{aspect-ratio:9/16;border:1px solid rgba(255,255,255,.34);box-shadow:0 28px 50px rgba(0,0,0,.5);margin-bottom:18px}
-.manga-gallery-section .project-visual img{object-position:center}
-.manga-gallery-section .project-meta{border-top:1px solid rgba(255,255,255,.42);padding-top:10px}
-.manga-gallery-section .project-meta p{color:rgba(255,255,255,.65)}
-.manga-gallery-section .project-card h3{font-size:clamp(20px,2vw,28px);letter-spacing:-.045em;min-height:2.15em}
-.manga-gallery-section .project-summary{color:rgba(255,255,255,.6);font-size:13px}
-.manga-gallery-section .project-review-open{border-color:rgba(255,255,255,.7);color:#fff;margin-top:14px}
-.drama-group .project-card[data-project="reborn"] .project-visual{aspect-ratio:9/16}
-
-/* Narrative shorts and commercials use the same tactile, snap-scrolling reel. */
-.carousel-group{background:#080909;color:#fff;margin:clamp(72px,9vw,132px) calc(-1 * clamp(22px,8vw,130px)) 0;overflow:hidden;padding:clamp(72px,8vw,112px) 0}
-.manga-gallery-section+.carousel-group,.carousel-group+.carousel-group{margin-top:0}
-.carousel-group+.carousel-group{border-top:1px solid rgba(255,255,255,.12)}
-.carousel-group::before{background:repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 1px,transparent 1px 6px);content:"";inset:0;opacity:.26;pointer-events:none;position:absolute}
-.carousel-group{position:relative}
-.carousel-group>*{position:relative}
-.carousel-group .work-group-heading{align-items:center;flex-direction:column;margin:0 auto 34px;max-width:580px;padding:0 clamp(22px,8vw,130px);text-align:center}
-.carousel-group .work-group-heading h3{font-weight:500;letter-spacing:0}
-.carousel-group .work-group-heading>p{color:rgba(255,255,255,.5);font-size:14px;max-width:450px}
-.carousel-group .section-kicker{color:rgba(255,255,255,.42);letter-spacing:.3em}
-.work-carousel{position:relative}
-.carousel-track{display:flex!important;gap:clamp(18px,2.1vw,32px);grid-template-columns:none!important;overflow-x:auto;padding:0 max(8vw,calc((100% - min(64vw,840px))/2)) 24px;scroll-behavior:smooth;scroll-padding-inline:max(8vw,calc((100% - min(64vw,840px))/2));scroll-snap-type:x mandatory;scrollbar-width:none}
-.carousel-track::-webkit-scrollbar{display:none}
-.carousel-track .project-card{border:0;color:#fff;flex:0 0 min(64vw,840px);padding:0;scroll-snap-align:center}
-.carousel-track .project-visual{aspect-ratio:16/9!important;background:#111;border:1px solid rgba(255,255,255,.12);box-shadow:0 12px 42px rgba(0,0,0,.58);margin-bottom:16px}
-.carousel-track .project-visual img{object-fit:cover}
-.carousel-track .play-badge{align-items:center;background:rgba(5,5,5,.5);border:1px solid rgba(255,255,255,.32);border-radius:50%;bottom:auto;display:flex;font-size:0;height:68px;justify-content:center;left:50%;padding:0;right:auto;top:50%;transform:translate(-50%,-50%);width:68px}
-.carousel-track .play-badge::after{border-bottom:10px solid transparent;border-left:15px solid #fff;border-top:10px solid transparent;content:"";margin-left:4px}
-.carousel-track .project-meta{align-items:flex-start;justify-content:flex-start}
-.carousel-track .project-meta p{color:rgba(255,255,255,.72);font-size:11px}
-.carousel-track .view-project{display:none}
-.carousel-track .project-card h3{font:500 clamp(18px,1.65vw,24px)/1.3 var(--font-body);letter-spacing:0;margin:8px 0 0;min-height:2.6em}
-.carousel-track .project-summary{display:none}
-.carousel-track .project-review-open,.carousel-track .project-workflow-link{border-color:rgba(255,255,255,.64);color:#fff;margin-top:13px;min-height:30px}
-.carousel-control{align-items:center;background:rgba(12,12,12,.58);border:1px solid rgba(255,255,255,.28);border-radius:50%;color:#fff;cursor:pointer;display:flex;font-size:26px;height:50px;justify-content:center;line-height:1;padding:0;position:absolute;top:min(20vw,260px);transform:translateY(-50%);width:50px;z-index:2}
-.carousel-control[data-carousel-direction="-1"]{left:clamp(10px,2vw,32px)}
-.carousel-control[data-carousel-direction="1"]{right:clamp(10px,2vw,32px)}
-.carousel-control:hover{background:#fff;color:var(--ink)}
-@media (max-width:760px){.work>.section-heading{min-height:0;padding:42px 0 38px}.work>.section-heading h2{font-size:42px}.work-group-heading{align-items:start;display:block;margin-bottom:24px}.work-group-heading>p{margin-top:16px}.manga-gallery-section{padding:0 18px 70px}.manga-gallery-section .work-group-heading,.carousel-group .work-group-heading{display:block;margin-bottom:30px;text-align:left}.manga-gallery-section .work-group-heading>p,.carousel-group .work-group-heading>p{margin-top:14px}.manga-gallery-section .project-grid{gap:16px;justify-content:flex-start;overflow-x:auto;padding:4px 9vw 36px;scroll-snap-type:x mandatory;scrollbar-width:none}.manga-gallery-section .project-grid::-webkit-scrollbar{display:none}.manga-gallery-section .project-card{flex:0 0 min(68vw,270px);scroll-snap-align:center}.manga-gallery-section .project-card:first-child{transform:rotate(-4deg)}.manga-gallery-section .project-card:last-child{transform:rotate(4deg)}.manga-gallery-section .project-card:hover{transform:none}.manga-gallery-section .project-card h3{font-size:21px}.carousel-group{margin-top:70px;padding:68px 0}.carousel-group .work-group-heading{padding:0 18px}.carousel-track{gap:16px;padding-inline:12vw;scroll-padding-inline:12vw}.carousel-track .project-card{flex-basis:76vw}.carousel-track .project-card h3{font-size:17px}.carousel-track .play-badge{height:56px;width:56px}.carousel-track .play-badge::after{border-bottom-width:8px;border-left-width:12px;border-top-width:8px}.carousel-control{height:44px;top:calc(12vw + 21.375vw);width:44px}.carousel-control[data-carousel-direction="-1"]{left:6px}.carousel-control[data-carousel-direction="1"]{right:6px}}
-
-/* Final work reel overrides. Kept last so the gallery rules remain the source of truth. */
-.process{padding-bottom:clamp(68px,8vw,108px)}
-.work{background:var(--paper);color:var(--ink);padding:0 clamp(22px,8vw,130px)}
-.work>.section-heading{align-items:center;display:flex;justify-content:space-between;margin:0;min-height:clamp(164px,15vw,218px);padding:clamp(34px,4vw,54px) 0}
-.work>.section-heading h2{font-size:clamp(42px,4.5vw,68px)}
-.work>.section-heading>p{color:var(--muted);margin:0;max-width:370px}
-.work>.section-heading .section-kicker{color:var(--ink)}
-.carousel-group{background:var(--ink);color:#fff;margin:0 calc(-1 * clamp(22px,8vw,130px));padding:0 0 clamp(64px,7vw,98px)}
-.carousel-group::before{display:none}
-.drama-group,.carousel-group+.carousel-group{border-top:1px solid rgba(255,255,255,.22);margin-top:0}
-.carousel-group .work-group-heading{align-items:center;display:flex;flex-direction:row;justify-content:flex-start;margin:0;max-width:none;min-height:118px;padding:23px clamp(22px,8vw,130px);text-align:left}
-.carousel-group .work-group-heading>p{display:none}
-.carousel-group .work-group-heading .section-kicker{color:var(--pink);letter-spacing:.16em;margin:0 0 7px}
-.carousel-group .work-group-heading h3{font:700 clamp(34px,4vw,56px)/1 var(--font-display);letter-spacing:-.05em}
-.carousel-track{gap:clamp(18px,2vw,30px);padding:0 max(8vw,calc((100% - min(62vw,840px))/2));scroll-padding-inline:max(8vw,calc((100% - min(62vw,840px))/2))}
-.carousel-track .project-card{flex-basis:min(62vw,840px)}
-.carousel-track .project-open{height:100%}
-.carousel-track .project-visual,.carousel-track .project-visual.portrait{aspect-ratio:16/9!important;border:1px solid rgba(255,255,255,.18);box-shadow:0 18px 42px rgba(0,0,0,.42);margin:0}
-.carousel-track .project-visual::after{background:rgba(4,4,4,.3);content:"";inset:0;pointer-events:none;position:absolute}
-.carousel-track .project-open:hover .project-visual img{filter:saturate(1.08);transform:scale(1.025)}
-.project-cover-copy{align-items:flex-start;background:rgba(8,8,8,.83);border-top:1px solid rgba(255,255,255,.22);bottom:0;box-sizing:border-box;display:flex;flex-direction:column;gap:7px;left:0;max-width:min(78%,620px);min-height:43%;padding:clamp(15px,2vw,27px);position:absolute;z-index:2}
-.project-cover-type{color:var(--pink);font:700 10px/1.2 var(--font-body);letter-spacing:.11em;text-transform:uppercase}
-.project-cover-copy strong{font:700 clamp(21px,2.45vw,37px)/1.06 var(--font-display);letter-spacing:-.045em}
-.project-cover-line{color:rgba(255,255,255,.76);font-size:clamp(12px,1.15vw,15px);line-height:1.5;max-width:42ch}
-.carousel-track .play-badge{background:rgba(5,5,5,.78);bottom:auto;height:50px;left:auto;right:16px;top:16px;transform:none;width:50px;z-index:3}
-.carousel-track .play-badge::after{border-bottom-width:8px;border-left-width:12px;border-top-width:8px}
-.carousel-track .project-meta,.carousel-track .project-card h3,.carousel-track .project-summary,.carousel-track .project-review-open,.carousel-track .project-workflow-link{display:none}
-.carousel-control{top:calc(118px + min(20vw,236px))}
-.dialog-review-open[hidden],.dialog-workflow-link[hidden]{display:none}
-@media (max-width:760px){.process{padding-bottom:66px}.work{padding:0 18px}.work>.section-heading{align-items:flex-start;display:block;min-height:0;padding:42px 0 38px}.work>.section-heading h2{font-size:42px}.work>.section-heading>p{margin-top:18px}.carousel-group{margin:0 -18px;padding-bottom:62px}.carousel-group .work-group-heading{display:flex;margin:0;min-height:92px;padding:18px}.carousel-group .work-group-heading h3{font-size:34px}.carousel-track{gap:14px;padding-inline:9vw;scroll-padding-inline:9vw}.carousel-track .project-card{flex-basis:82vw}.project-cover-copy{gap:5px;max-width:88%;min-height:48%;padding:15px}.project-cover-copy strong{font-size:22px}.project-cover-line{font-size:12px}.carousel-track .play-badge{height:44px;right:12px;top:12px;width:44px}.carousel-control{top:calc(92px + 23vw)}}
