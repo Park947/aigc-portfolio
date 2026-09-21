@@ -19,7 +19,7 @@ const projects = {
   },
   reborn: {
     type: "AIGC 悬疑短剧 / 03:01",
-    title: "《重生后，我不再救他》",
+    title: "重生后，我不再救他",
     intro: "以重生后的关键抉择为起点，围绕人物关系和悬疑反转推进的一支叙事短剧。",
     role: "剧本、分镜、AI 视频生成、素材筛选、剪辑与声音设计。",
     focus: "将悬疑信息放进人物关系和节奏节点中，让反转在短时长内具有明确的情绪落点。",
@@ -28,7 +28,7 @@ const projects = {
   },
   mirror: {
     type: "叙事短片 / 00:59",
-    title: "《镜子里的我，已经活过今天》",
+    title: "镜子里的我，已经活过今天",
     intro: "从镜中自我对视出发，以人物情绪和日常瞬间组织一段有关时间感的短片。",
     role: "视觉资产设定、图生视频、素材筛选、剪辑与声音设计。",
     focus: "用镜面、视线与场景切换维持人物状态，让抽象的情绪变化拥有可感知的画面节奏。",
@@ -37,7 +37,7 @@ const projects = {
   },
   elevator: {
     type: "叙事短片 / 00:15",
-    title: "《电梯里的每一层人生》",
+    title: "电梯里的每一层人生",
     intro: "一支围绕电梯空间切换与人生隐喻展开的竖屏叙事短片。",
     role: "创意策划、分镜、AI 视频生成、剪辑与声音设计。",
     focus: "把有限空间作为统一视觉锚点，通过楼层变化建立简洁、直接的叙事推进。",
@@ -46,7 +46,7 @@ const projects = {
   },
   eclipse: {
     type: "视觉实验 / 00:30",
-    title: "《日蚀丛林》",
+    title: "日蚀丛林",
     intro: "一支 30 秒的美漫风动作预告片：女战士深入原始丛林，在日蚀发生时遭遇兽群与虫王。当前为带生成平台标记的展示版，后续将替换为无水印导出。",
     role: "世界观、角色、怪物与场景设定；6 个高动作密度镜头拆解；图生视频生成、素材筛选、剪辑与声音包装。",
     focus: "在动作、特效与密集场景中维持主角外形、色彩体系和画风统一，并让镜头节奏服务冒险感。",
@@ -55,10 +55,28 @@ const projects = {
   },
   cordon: {
     type: "悬疑短片 / 00:20",
-    title: "《警戒线之后》",
+    title: "警戒线之后",
     intro: "以城市后巷与警戒线为视觉入口，在冷灰色调和环境留白中，建立一段事件发生后的悬疑感。",
     role: "画面设计、AI 视频生成、素材筛选与节奏剪辑。",
     focus: "用警戒线、封闭空间和克制的镜头运动集中观众注意力，让有限时长内的环境信息先于答案出现。",
+    review: {
+      approach: [
+        "先把故事压缩成“调查者抵达 -> 跨过警戒线 -> 观察封锁现场 -> 回到线内查验”四个动作节点。人物不解释案情，只通过白手套、下探视线和行进方向建立调查者身份，让观众先感到事件已发生。",
+        "把后巷固定为一组可复用的空间锚点：左侧灰墙和施工围挡、右侧砖墙、路边隔离栏、警车和横向警戒线。中近景负责人物表情，背影与侧身镜头负责交代围观人群和封锁范围，避免在 20 秒内反复重建地点。",
+        "剪辑用警戒线做前景遮挡和段落连接：开场从黄线前的下探进入，中段切背影与侧视扩展空间，警车和人群作为信息补充，结尾再回到人物靠近线内的动作。画面维持冷灰低饱和，只保留黄线和警灯作为色彩焦点。"
+      ],
+      challenges: [
+        "警戒线、人物、警车和围观人群同时出现时，模型容易改变黄线高度、隔离栏位置或人群密度。后续将警戒线始终固定在前景横向位置，群演只作为模糊背景层，不让他们承担叙事动作。",
+        "人物从远景行走切换到近景查验时，发型、灰色西装、白衬衫和手套容易漂移。通过统一角色参考，并把镜头拆为“跨线、行走、回望、俯身”四个单一动作，减少一次生成中同时处理移动与表演的压力。",
+        "巷道的纵深与警车位置是悬疑感的关键，但独立生成镜头容易改变墙体材质、道路宽度和车辆方向。需要以同一条巷道参考图锁定左右空间关系，并把大范围移动改为固定机位下的人物进出。",
+        "20 秒内若同时交代案件、人物身份和具体线索，节奏会变成信息堆叠。因此成片没有强行给出答案，而是把案件信息停留在警戒线、警车、围观者和人物反应上，让“之后发生了什么”成为观看后的悬念。"
+      ],
+      reflection: [
+        "这支片验证了悬疑氛围可以先由空间秩序建立，而不必依赖惊吓或大量文字。警戒线既是视觉符号，也是镜头的前景边界；后续同类题材应优先确定一个可重复出现的空间符号。",
+        "目前人物的调查行为已经可读，但缺少一个能带动观众继续推理的具体物证。下一版会在结尾加入手表、照片、沾灰的信封等单一道具特写，并给足停留时间，再由后期补充可读文字。",
+        "声音仍可进一步承担叙事：会用远处人群低语、警灯环境音、鞋底与地面摩擦、警戒线轻响建立声场，并在人物俯身时降低环境声，让观众注意力落到线索上。"
+      ]
+    },
     video: "assets/videos/cordon-after.mov"
   },
   serum: {
@@ -205,20 +223,24 @@ reviewDialog.addEventListener("click", (event) => {
   if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) reviewDialog.close();
 });
 
-document.querySelectorAll(".filter").forEach((filter) => {
-  filter.addEventListener("click", () => {
-    document.querySelectorAll(".filter").forEach((button) => {
-      button.classList.remove("is-active");
-      button.setAttribute("aria-pressed", "false");
-    });
-    filter.classList.add("is-active");
-    filter.setAttribute("aria-pressed", "true");
-    document.querySelectorAll(".project-card").forEach((card) => {
-      card.classList.toggle("is-hidden", filter.dataset.filter !== "all" && card.dataset.category !== filter.dataset.filter);
-    });
-    document.querySelectorAll(".work-group").forEach((group) => {
-      group.classList.toggle("is-empty", !group.querySelector(".project-card:not(.is-hidden)"));
-    });
+document.querySelectorAll(".wide-reel").forEach((reel) => {
+  const track = reel.querySelector(".reel-track");
+  const move = (direction) => {
+    const card = track.querySelector(".project-card");
+    const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
+    const distance = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    track.scrollBy({ left: direction * distance, behavior });
+  };
+
+  reel.querySelectorAll(".reel-control").forEach((button) => {
+    button.addEventListener("click", () => move(Number(button.dataset.reelDirection)));
+  });
+
+  track.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    move(event.key === "ArrowRight" ? 1 : -1);
   });
 });
 
@@ -231,6 +253,21 @@ window.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const hero = document.querySelector(".hero");
+const heroArt = document.querySelector(".hero-art");
+if (!reduceMotion && hero && heroArt && window.matchMedia("(pointer: fine)").matches) {
+  hero.addEventListener("pointermove", (event) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+    heroArt.style.setProperty("--hero-shift-x", `${x * 14}px`);
+    heroArt.style.setProperty("--hero-shift-y", `${y * 12}px`);
+  }, { passive: true });
+  hero.addEventListener("pointerleave", () => {
+    heroArt.style.setProperty("--hero-shift-x", "0px");
+    heroArt.style.setProperty("--hero-shift-y", "0px");
+  });
+}
 const revealItems = document.querySelectorAll(".reveal");
 if (reduceMotion) revealItems.forEach((item) => item.classList.add("is-visible"));
 else {
