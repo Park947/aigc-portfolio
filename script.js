@@ -223,17 +223,34 @@ reviewDialog.addEventListener("click", (event) => {
   if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) reviewDialog.close();
 });
 
-document.querySelectorAll(".wide-reel").forEach((reel) => {
-  const track = reel.querySelector(".reel-track");
+document.querySelectorAll(".wide-reel, .portrait-reel").forEach((reel) => {
+  const track = reel.querySelector(".reel-track, .portrait-track");
+  if (!track) return;
+  const controls = [...reel.querySelectorAll(".reel-control")];
+  let navigationTimeout;
   const move = (direction) => {
-    const card = track.querySelector(".project-card");
-    const gap = Number.parseFloat(getComputedStyle(track).gap) || 0;
-    const distance = card ? card.getBoundingClientRect().width + gap : track.clientWidth * 0.8;
+    const cards = [...track.querySelectorAll(".project-card")];
+    if (!cards.length) return;
+    const trackLeft = track.getBoundingClientRect().left;
+    const currentIndex = cards.reduce((closestIndex, card, index) => {
+      const closestDistance = Math.abs(cards[closestIndex].getBoundingClientRect().left - trackLeft);
+      const distance = Math.abs(card.getBoundingClientRect().left - trackLeft);
+      return distance < closestDistance ? index : closestIndex;
+    }, 0);
+    const nextIndex = Math.max(0, Math.min(cards.length - 1, currentIndex + direction));
+    if (nextIndex === currentIndex) return;
     const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
-    track.scrollBy({ left: direction * distance, behavior });
+    const targetLeft = track.scrollLeft + cards[nextIndex].getBoundingClientRect().left - trackLeft;
+    track.scrollTo({ left: targetLeft, behavior });
+    if (behavior === "auto") return;
+    controls.forEach((button) => { button.disabled = true; });
+    window.clearTimeout(navigationTimeout);
+    navigationTimeout = window.setTimeout(() => {
+      controls.forEach((button) => { button.disabled = false; });
+    }, 520);
   };
 
-  reel.querySelectorAll(".reel-control").forEach((button) => {
+  controls.forEach((button) => {
     button.addEventListener("click", () => move(Number(button.dataset.reelDirection)));
   });
 
@@ -253,6 +270,28 @@ window.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const scenes = [...document.querySelectorAll("main > section")];
+
+if (reduceMotion) scenes.forEach((scene) => scene.classList.add("is-scene-active"));
+else if ("IntersectionObserver" in window) {
+  let currentScene = null;
+
+  document.body.classList.add("has-scene-motion");
+  const activateScene = (scene) => {
+    if (scene === currentScene) return;
+    currentScene = scene;
+    scene.classList.remove("is-scene-active");
+    void scene.offsetWidth;
+    scene.classList.add("is-scene-active");
+  };
+  const sceneObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    activateScene(entry.target);
+  }), { threshold: 0.01, rootMargin: "-38% 0px -38% 0px" });
+
+  scenes.forEach((scene) => sceneObserver.observe(scene));
+} else scenes.forEach((scene) => scene.classList.add("is-scene-active"));
+
 const hero = document.querySelector(".hero");
 const heroArt = document.querySelector(".hero-art");
 if (!reduceMotion && hero && heroArt && window.matchMedia("(pointer: fine)").matches) {
