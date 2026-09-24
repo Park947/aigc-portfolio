@@ -8,15 +8,13 @@ a{color:inherit;text-decoration:none}
 button{font:inherit}
 .scroll-progress{position:fixed;z-index:20;inset:0 auto auto 0;width:100%;height:3px;background:transparent}
 .scroll-progress span{display:block;width:0;height:100%;background:var(--pink)}
-body.has-scene-motion main>section.is-scene-active{animation:section-arrive .68s cubic-bezier(.2,.8,.2,1) both}
-@keyframes section-arrive{from{opacity:.62;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
 .site-header{height:var(--header-height);padding:0 clamp(22px,4vw,64px);display:flex;align-items:center;justify-content:space-between;position:absolute;z-index:10;top:0;width:100%;color:white}
 .brand{font:800 24px/1 var(--font-display);letter-spacing:-.08em}
 .brand span{color:var(--pink)}
 nav{display:flex;gap:28px;font-size:13px;font-weight:600}
 nav a,.header-cta,footer a{transition:color .2s ease}
 .header-cta{font-size:13px;font-weight:600}
-.header-cta span,.text-link span,.button span{margin-left:6px}
+.header-cta span,.text-link span,.button span{font-family:Arial,sans-serif;font-variant-emoji:text;margin-left:6px}
 .hero{min-height:760px;height:100svh;position:relative;overflow:hidden;background:#111;color:#fff;padding:calc(var(--header-height) + 50px) clamp(22px,8vw,130px) 70px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);align-items:center;gap:20px}
 .hero-noise{position:absolute;inset:0;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");pointer-events:none}
 .hero-copy,.hero-art{position:relative;z-index:1}
@@ -98,10 +96,10 @@ nav a,.header-cta,footer a{transition:color .2s ease}
 .project-meta{align-items:center;display:flex;gap:10px;justify-content:space-between;margin-top:17px}
 .project-meta p{color:#5d5c56;margin:0;font:700 10px var(--font-body);letter-spacing:.1em;text-transform:uppercase}
 .view-project{color:var(--pink);font-size:11px;font-weight:700}
-.view-project i{font-style:normal;margin-left:3px;transition:transform .2s ease;display:inline-block}
+.view-project i{font-family:Arial,sans-serif;font-style:normal;font-variant-emoji:text;margin-left:3px;transition:transform .2s ease;display:inline-block}
 .project-open:hover .view-project i{transform:translate(2px,-2px)}
 .project-review-open,.project-workflow-link{align-items:center;background:transparent;border:0;border-bottom:1px solid currentColor;color:var(--ink);cursor:pointer;display:inline-flex;font-size:11px;font-weight:700;gap:5px;margin-top:20px;min-height:28px;padding:0 0 4px;text-align:left}
-.project-review-open i,.project-workflow-link i{font-style:normal;transition:transform .2s ease}
+.project-review-open i,.project-workflow-link i{font-family:Arial,sans-serif;font-style:normal;font-variant-emoji:text;transition:transform .2s ease}
 .project-review-open:hover i,.project-workflow-link:hover i{transform:translate(2px,-2px)}
 .project-card h3{font:700 clamp(19px,1.85vw,29px)/1.12 var(--font-display);letter-spacing:0;margin:14px 0 12px}
 .process{background:var(--ink);color:#fff;overflow:hidden;position:relative}

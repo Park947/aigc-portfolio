@@ -270,28 +270,6 @@ window.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const scenes = [...document.querySelectorAll("main > section")];
-
-if (reduceMotion) scenes.forEach((scene) => scene.classList.add("is-scene-active"));
-else if ("IntersectionObserver" in window) {
-  let currentScene = null;
-
-  document.body.classList.add("has-scene-motion");
-  const activateScene = (scene) => {
-    if (scene === currentScene) return;
-    currentScene = scene;
-    scene.classList.remove("is-scene-active");
-    void scene.offsetWidth;
-    scene.classList.add("is-scene-active");
-  };
-  const sceneObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    activateScene(entry.target);
-  }), { threshold: 0.01, rootMargin: "-38% 0px -38% 0px" });
-
-  scenes.forEach((scene) => sceneObserver.observe(scene));
-} else scenes.forEach((scene) => scene.classList.add("is-scene-active"));
-
 const hero = document.querySelector(".hero");
 const heroArt = document.querySelector(".hero-art");
 if (!reduceMotion && hero && heroArt && window.matchMedia("(pointer: fine)").matches) {
